@@ -13,8 +13,11 @@ for link in people_links:
   html_meetings = requests.get(link).text
   root_meetings = lxml.html.fromstring(html_meetings)
   host = root_meetings.cssselect("h3")[0].text_content().strip().encode('ascii', 'ignore')
-  pages = root_meetings.cssselect("a:nth-last-of-type(1)")[0].get('href')
-  print pages
+  try:
+    number_pages = int(root_meetings.cssselect("a:nth-last-of-type(1)")[0].get('href')[-1])
+  except IndexError: 
+    number_pages = 1
+  print number_pages
   
   #//*[@id="layout"]/div/div[2]/center/span[1]/a[7]
 
