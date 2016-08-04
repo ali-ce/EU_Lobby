@@ -6,14 +6,10 @@ import urllib
 
 url = "http://www.transparencyinternational.eu/european-commissions-lobbying-meetings/"
 html = requests.get(url).text
-print html
 root = lxml.html.fromstring(html)
-# import scraperwiki
-# import lxml.html
-#
-# # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
-#
+people_links = [link.get('href') for link in root.cssselect("//div/table/tbody/tr/td/table/tbody/tr/td[3]/a")]
+print people_links
+
 # # Find something on the page using css selectors
 # root = lxml.html.fromstring(html)
 # root.cssselect("div[align='left']")
