@@ -12,7 +12,7 @@ people_links = [link.get('href') for link in root.cssselect("table tr td:nth-of-
 for link in people_links:
   html_meetings = requests.get(link).text
   root_meetings = lxml.html.fromstring(html_meetings)
-  host = root_meetings.cssselect("h3")[0].text_content().strip()
+  host = root_meetings.cssselect("h3")[0].text_content().strip().encode('ascii', 'ignore')
   print host
 
 # # Find something on the page using css selectors
