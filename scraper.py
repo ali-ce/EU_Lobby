@@ -1,6 +1,13 @@
-# This is a template for a Python scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
+import scraperwiki
+import lxml.html
+import requests
+import json
+import urllib
 
+url = "http://www.transparencyinternational.eu/european-commissions-lobbying-meetings/"
+html = requests.get(url).text
+print html
+root = lxml.html.fromstring(html)
 # import scraperwiki
 # import lxml.html
 #
