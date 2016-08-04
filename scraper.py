@@ -27,10 +27,10 @@ for link in people_links:
   except IndexError: 
     number_pages = "1"
   #pagination
-  if number page = 1:
+  if number_page = 1:
     member_all_meetings_links = link
   else:
-    current page = 1
+    current_page = 1
     member_all_meetings_links = []
   while current page <= number pages
   if nu
