@@ -14,7 +14,7 @@ for link in people_links:
   root_meetings = lxml.html.fromstring(html_meetings)
   host = root_meetings.cssselect("h3")[0].text_content().strip().encode('ascii', 'ignore')
   try:
-    number_pages = str(root_meetings.cssselect("span a")[-1].get('href'))[-1]
+    number_pages = str(root_meetings.cssselect("span a")[-1].get('href')).split("p=")[-1]
   except IndexError: 
     number_pages = "1"
   print number_pages
