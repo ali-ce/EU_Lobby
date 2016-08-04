@@ -15,8 +15,8 @@ for link in people_links:
   host = root_meetings.cssselect("h3")[0].text_content().strip().encode('ascii', 'ignore')
   try:
     number_pages = root_meetings.cssselect("span[class='pagelinks'] a:last-of-type")[0].get('href')
-  except IndexError: 
-    number_pages = 1
+  #except IndexError: 
+   # number_pages = 1
   print number_pages
   
   #//*[@id="layout"]/div/div[2]/center/span[1]/a[7]
