@@ -8,7 +8,7 @@ url = "http://www.transparencyinternational.eu/european-commissions-lobbying-mee
 html = requests.get(url).text
 root = lxml.html.fromstring(html)
 people_links = [link.get('href') for link in root.cssselect("tr a")]
-print people_links
+print len(people_links)
 
 # # Find something on the page using css selectors
 # root = lxml.html.fromstring(html)
